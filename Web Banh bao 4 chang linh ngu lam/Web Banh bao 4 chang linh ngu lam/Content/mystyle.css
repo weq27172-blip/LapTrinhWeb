@@ -1,0 +1,39 @@
+﻿body {
+    font-family: Arial;
+    margin: 0;
+}
+
+.top {
+    background: #ffcc99;
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+}
+
+.main {
+    display: flex;
+    min-height: 500px;
+}
+
+.left {
+    width: 20%;
+    background: #f4f4f4;
+    padding: 15px;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+}
+
+.bottom {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}

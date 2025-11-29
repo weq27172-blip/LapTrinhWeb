@@ -1,0 +1,45 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Thêm sản phẩm mới";
+}
+
+<h2 class="mb-4">Thêm sản phẩm mới</h2>
+
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label class="form-label">Tên sản phẩm</label>
+        @Html.TextBoxFor(m => m.NamePro, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NamePro, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Giá</label>
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number", step = "1000" })
+        @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Loại sản phẩm</label>
+        @Html.DropDownListFor(m => m.Category, (SelectList)ViewBag.CateList, "--Chọn loại--", new { @class = "form-control" })
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Mô tả</label>
+        @Html.TextAreaFor(m => m.DescriptionPro, new { @class = "form-control", rows = 4 })
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Ảnh sản phẩm</label>
+        <input type="file" name="UploadImage" class="form-control" accept="image/*" />
+    </div>
+
+  
+
+    <button class="btn btn-success">Thêm sản phẩm</button>
+    <a class="btn btn-secondary" href="@Url.Action("Index")">Hủy</a>
+}

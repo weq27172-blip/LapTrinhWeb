@@ -1,0 +1,74 @@
+﻿@model List<Web_Banh_bao_4_chang_linh_ngu_lam.Models.CartItem>
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Giỏ hàng";
+    var cart = Model as List<Web_Banh_bao_4_chang_linh_ngu_lam.Models.CartItem>;
+}
+
+<div class="container py-4" style="background:#fff6ee;">
+    <h2 class="mb-4">Giỏ hàng của bạn</h2>
+
+    @if (cart == null || !cart.Any())
+    {
+        <div class="alert alert-info">
+            Giỏ hàng trống.
+            <a href="@Url.Action("Index", "Product")" class="alert-link">Tiếp tục mua sắm</a>
+        </div>
+    }
+    else
+    {
+        using (Html.BeginForm("UpdateCart", "ShoppingCart", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <table class="table table-bordered align-middle text-center">
+                <thead class="table-warning">
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th style="width:120px">Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < cart.Count; i++)
+                    {
+                        var item = cart[i];
+                        <tr>
+                            <td class="text-start">
+                                <img src="@Url.Content("~/Content/Images/" + (string.IsNullOrEmpty(item.Product.ImagePro) ? "noimage.jpg" : item.Product.ImagePro))"
+                                     width="80" class="me-2 rounded" />
+                                <strong>@item.Product.NamePro</strong>
+                            </td>
+                            <td>@item.Product.Price.ToString("N0") VND</td>
+                            <td>
+                                <input type="hidden" name="productIds" value="@item.Product.ProductID" />
+                                <input type="number" name="quantities" value="@item.Quantity" min="1" class="form-control" />
+                            </td>
+                            <td>@item.TotalPrice.ToString("N0") VND</td>
+
+                            <td>
+                                <a href="@Url.Action("RemoveItem", "ShoppingCart", new { id = item.Product.ProductID })" class="btn btn-sm btn-danger">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <div>
+                    <button type="submit" class="btn btn-primary">Cập nhật giỏ hàng</button>
+                    <a href="@Url.Action("ClearCart", "ShoppingCart")" class="btn btn-outline-danger ms-2">Xóa hết</a>
+                </div>
+                <div class="fw-bold fs-5 text-danger">
+                    Tổng: @(cart.Sum(x => x.Product.Price * x.Quantity).ToString("N0")) VND
+                </div>
+            </div>
+
+            <div class="text-end mt-4">
+                <a href="@Url.Action("Checkout", "ShoppingCart")" class="btn btn-success btn-lg">Thanh toán</a>
+            </div>
+        }
+    }
+</div>

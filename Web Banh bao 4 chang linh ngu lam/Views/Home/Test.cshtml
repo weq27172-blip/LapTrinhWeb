@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Web_Banh_bao_4_chang_linh_ngu_lam.Models.Category>
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<h2>Kiểm tra kết nối Database</h2>
+<p>Có @ViewBag.SoLuong danh mục trong database.</p>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Products</li>
+    }
+</ul>

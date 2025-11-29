@@ -1,0 +1,92 @@
+﻿body {
+    background-color: #fffdf8;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+    background-color: #fff3e6 !important;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+    .product-card:hover {
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        transform: translateY(-4px);
+    }
+
+.price {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #ff7b00;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #e96b00;
+    }
+.carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+    padding: 15px;
+}
+main {
+    padding-bottom: 100px !important;
+}
+
+/* Không cho footer dính vào sản phẩm */
+footer {
+    background: #f8f9fa;
+    position: relative;
+    z-index: 10;
+}
+
+/* đảm bảo card luôn bằng chiều cao */
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+/* CATEGORY LIST THEMING */
+.category-list .list-group-item {
+    border-radius: 8px;
+    margin-bottom: 6px;
+    transition: 0.2s;
+}
+
+    /* Hover color (soft peach background like your navbar) */
+    .category-list .list-group-item:hover {
+        background-color: #fff3e6;
+    }
+
+    /* Active item (your brand orange) */
+    .category-list .list-group-item.active {
+        background-color: #ff7b00 !important;
+        border-color: #ff7b00 !important;
+        color: #fff !important;
+        font-weight: 600;
+    }
+
+        /* Ensure text color stays white in active state */
+        .category-list .list-group-item.active a {
+            color: white !important;
+        }
+
+    /* Normal links inherit your theme */
+    .category-list .list-group-item a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+    }

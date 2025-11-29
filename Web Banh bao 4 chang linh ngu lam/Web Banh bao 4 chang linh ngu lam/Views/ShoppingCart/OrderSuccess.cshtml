@@ -1,0 +1,15 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.OrderPro
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Đặt hàng thành công";
+}
+
+<div class="container py-5 text-center" style="background:#fff6ee;">
+    <h2 class="text-success mb-3">Đặt hàng thành công!</h2>
+    <p><strong>Mã đơn hàng:</strong> @Model.ID</p>
+    <p><strong>Ngày đặt:</strong> @(Model.DateOrder.HasValue ? Model.DateOrder.Value.ToString("dd/MM/yyyy HH:mm") : "")</p>
+    <p><strong>Tổng tiền:</strong> @(Model.TotalAmount.HasValue ? Model.TotalAmount.Value.ToString("N0") : "0") VND</p>
+    <p><strong>Trạng thái:</strong> @Model.Status</p>
+
+    <a href="@Url.Action("Index","Home")" class="btn btn-primary mt-3">Về trang chủ</a>
+</div>

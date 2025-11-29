@@ -1,0 +1,83 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.ProductFilterVM
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Sản phẩm";
+}
+
+<h2 class="mb-4">Sản phẩm</h2>
+
+<!-- CATEGORY TITLE -->
+@if (Model.SelectedCategoryId.HasValue)
+{
+    var cate = Model.Categories.FirstOrDefault(c => c.IDCate == Model.SelectedCategoryId);
+    if (cate != null)
+    {
+        <h4 class="mb-4">
+            Sản phẩm trong danh mục:
+            <span style="color:#ff7b00;font-weight:600;">
+                @cate.NameCate
+            </span>
+        </h4>
+    }
+}
+
+<div class="row">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="col-md-3">
+        <div class="category-list">
+            <div class="list-group">
+
+                <!-- ALL PRODUCTS -->
+                <a href="@Url.Action("Index", "Product")"
+                   class="list-group-item list-group-item-action @(Model.SelectedCategoryId == null ? "active" : "")">
+                    Tất cả sản phẩm
+                </a>
+
+                <!-- CATEGORY LIST -->
+                @foreach (var c in Model.Categories)
+                {
+                    bool active = (Model.SelectedCategoryId == c.IDCate);
+
+                    <a href="@Url.Action("Index", "Product", new { categoryId = c.IDCate })"
+                       class="list-group-item list-group-item-action @(active ? "active" : "")">
+                        @c.NameCate
+                    </a>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="col-md-9">
+        <div class="row g-3">
+
+            @if (Model.Products != null && Model.Products.Any())
+            {
+                foreach (var p in Model.Products)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        @Html.Partial("_ProductCard", p)
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">Không có sản phẩm nào.</p>
+            }
+
+        </div>
+    </div>
+
+</div>
+
+<!-- FIX BOOTSTRAP BLUE ACTIVE -->
+<style>
+    .list-group-item.active {
+        background-color: #ff7b00 !important;
+        border-color: #ff7b00 !important;
+        color: white !important;
+        font-weight: 600;
+    }
+</style>

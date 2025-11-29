@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Web_Banh_bao_4_chang_linh_ngu_lam.Models.OrderPro>
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Quản lý đơn hàng";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4 text-center text-primary">Danh sách đơn hàng</h2>
+
+    <table class="table table-bordered text-center align-middle shadow-sm">
+        <thead class="table-warning">
+            <tr>
+                <th>Mã ĐH</th>
+                <th>Ngày đặt</th>
+                <th>Khách hàng</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model)
+            {
+                <tr>
+                    <td>@o.ID</td>
+                    <td>@(o.DateOrder.HasValue ? o.DateOrder.Value.ToString("dd/MM/yyyy HH:mm") : "")</td>
+                    <td>@(o.Customer != null ? o.Customer.NameCus : "Không rõ")</td>
+                    <td>@(o.TotalAmount.HasValue ? o.TotalAmount.Value.ToString("N0") : "0") VND</td>
+                    <td>@o.Status</td>
+                    <td>
+                        <a href="@Url.Action("OrderDetail", "Admin", new { id = o.ID })" class="btn btn-sm btn-outline-primary">
+                            <i class="fa fa-eye"></i> Xem
+                        </a>
+                        @using (Html.BeginForm("UpdateStatus", "Admin", FormMethod.Post))
+                        {
+                            @Html.Hidden("id", o.ID)
+                            <select name="status" class="form-select form-select-sm d-inline w-auto">
+                                <option @(o.Status == "Chờ xử lý" ? "selected" : "")>Chờ xử lý</option>
+                                <option @(o.Status == "Đang giao" ? "selected" : "")>Đang giao</option>
+                                <option @(o.Status == "Hoàn tất" ? "selected" : "")>Hoàn tất</option>
+                                <option @(o.Status == "Đã hủy" ? "selected" : "")>Đã hủy</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-success ms-1">Cập nhật</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

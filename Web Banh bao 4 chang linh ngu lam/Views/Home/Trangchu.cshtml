@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Web_Banh_bao_4_chang_linh_ngu_lam.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<h2>Sản phẩm nổi bật</h2>
+
+<div class="products">
+    @foreach (var p in Model)
+    {
+        <div class="box-pro">
+            <img src="@Url.Content("~/Content/Images/" + p.ImagePro)" width="150" alt="@p.ProductID" />
+            <p>@p.ProductID</p>
+            <p>@p.Price.ToString("N0") VND</p>
+        </div>
+    }
+</div>

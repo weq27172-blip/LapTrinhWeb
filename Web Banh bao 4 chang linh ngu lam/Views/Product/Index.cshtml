@@ -1,0 +1,127 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.ProductFilterVM
+@using Web_Banh_bao_4_chang_linh_ngu_lam.Models
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Sản phẩm";
+
+    // Get current sort from query string
+    string currentSort = Request.QueryString["sort"] ?? "default";
+}
+
+<h2 class="mb-4">Sản phẩm</h2>
+
+<!-- CATEGORY TITLE -->
+@if (Model.SelectedCategoryId.HasValue)
+{
+    var cate = Model.Categories.FirstOrDefault(c => c.IDCate == Model.SelectedCategoryId.Value);
+    if (cate != null)
+    {
+        <h4 class="mb-4">
+            Sản phẩm trong danh mục:
+            <span style="color:#ff7b00;font-weight:600;">@cate.NameCate</span>
+        </h4>
+    }
+}
+else
+{
+    <h4 class="mb-4">Tất cả sản phẩm</h4>
+}
+
+<div class="row">
+    <!-- LEFT SIDEBAR -->
+    <div class="col-md-3">
+        <div class="category-list">
+            <div class="list-group">
+                <a href="@Url.Action("Index", "Product")" class="list-group-item list-group-item-action @(Model.SelectedCategoryId == null ? "active" : "")">Tất cả sản phẩm</a>
+
+                @foreach (var c in Model.Categories)
+                {
+                    bool active = Model.SelectedCategoryId.HasValue && Model.SelectedCategoryId.Value == c.IDCate;
+                    <a href="@Url.Action("Index", "Product", new { categoryId = c.IDCate })" class="list-group-item list-group-item-action @(active ? "active" : "")">
+                        @c.NameCate
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="col-md-9">
+        <!-- SORT OPTIONS -->
+        <div class="d-flex justify-content-end mb-3">
+            <form method="get" id="sortForm">
+                @* Keep current category in query *@
+                <input type="hidden" name="categoryId" value="@Model.SelectedCategoryId" />
+                <select name="sort" class="form-select" onchange="document.getElementById('sortForm').submit();">
+                    <option value="default" @(currentSort=="default" ? "selected" : "")>Mặc định</option>
+                    <option value="az" @(currentSort=="az" ? "selected" : "")>Tên A-Z</option>
+                    <option value="za" @(currentSort=="za" ? "selected" : "")>Tên Z-A</option>
+                    <option value="price_desc" @(currentSort=="price_desc" ? "selected" : "")>Giá cao → thấp</option>
+                    <option value="price_asc" @(currentSort=="price_asc" ? "selected" : "")>Giá thấp → cao</option>
+                    <option value="bestseller" @(currentSort=="bestseller" ? "selected" : "")>Bán chạy nhất</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="row g-3">
+            @if (Model.Products != null && Model.Products.Any())
+            {
+                foreach (var p in Model.Products)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        @Html.Partial("_ProductCard", p)
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">Không có sản phẩm nào.</p>
+            }
+        </div>
+
+        <!-- PAGINATION -->
+        @if (Model.TotalProducts > Model.PageSize)
+        {
+            var totalPages = (int)Math.Ceiling((double)Model.TotalProducts / Model.PageSize);
+            <nav>
+                <ul class="pagination justify-content-center mt-4">
+                    @for (int i = 1; i <= totalPages; i++)
+                    {
+                        var active = i == Model.CurrentPage ? "active" : "";
+                        <li class="page-item @active">
+                            <a class="page-link" href="@Url.Action("Index", "Product", new { categoryId = Model.SelectedCategoryId, page = i, sort = currentSort })">
+                                @i
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        }
+    </div>
+</div>
+
+<style>
+    .list-group-item.active {
+        background-color: #ff7b00 !important;
+        border-color: #ff7b00 !important;
+        color: white !important;
+        font-weight: 600;
+    }
+
+    .category-list .list-group-item {
+        border-radius: 8px;
+        margin-bottom: 6px;
+        transition: 0.2s;
+    }
+
+    .category-list .list-group-item:hover {
+        background-color: #fff3e6;
+    }
+
+    .category-list .list-group-item a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+    }
+</style>

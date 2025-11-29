@@ -1,0 +1,647 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|d:\\team\\web banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\admin\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\admin\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\admin\\createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\admin\\createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\loginuser\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\loginuser\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\controllers\\loginusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\controllers\\loginusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|d:\\team\\web banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\models\\dbbanhbaotuandatmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\models\\dbbanhbaotuandatmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\admin\\discount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\admin\\discount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\loginuser\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\loginuser\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\loginuser\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\loginuser\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\models\\productfiltervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\models\\productfiltervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\models\\reviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\models\\reviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\shoppingcart\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\shoppingcart\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\admin\\orderdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\admin\\orderdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\admin\\creatediscount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\admin\\creatediscount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\home\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\home\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\models\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\models\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\shared\\_productcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\shared\\_productcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\home\\trangchu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\home\\trangchu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\shared\\_masterlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\shared\\_masterlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\home\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\home\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\shoppingcart\\showcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\shoppingcart\\showcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\views\\admin\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\views\\admin\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\models\\dbbanhbaotuandatmodel.edmx.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\models\\dbbanhbaotuandatmodel.edmx.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\web banh bao 4 chang linh ngu lam\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AE4A43-1E2E-41EA-926D-7768455B2871}|Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam.csproj|solutionrelative:web banh bao 4 chang linh ngu lam\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditProduct.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\EditProduct.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\EditProduct.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\EditProduct.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\EditProduct.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAIwDEAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T10:14:43.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Register.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Register.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Register.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Register.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T03:06:28.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T05:30:56.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAANgAAAAAAAAAAAAWwOMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T10:28:54.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateProduct.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateProduct.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateProduct.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateProduct.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateProduct.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAACsAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T10:06:21.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\Checkout.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\Checkout.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\Checkout.cshtml",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAHkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:29:24.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DBBanhBaoTuanDatModel.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx [Diagram1]",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-11-20T17:27:52.035Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Controllers\\ShoppingCartController.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\ShoppingCartController.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Controllers\\ShoppingCartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T02:39:05.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Controllers\\ReviewController.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T02:40:48.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginUserController.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\LoginUserController.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Controllers\\LoginUserController.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\LoginUserController.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Controllers\\LoginUserController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAlwDQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T05:32:14.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T08:53:02.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web.config",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Web.config",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web.config",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Web.config",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAlwDUAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-11-17T12:24:35.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProductFilterVM.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\ProductFilterVM.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Models\\ProductFilterVM.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\ProductFilterVM.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Models\\ProductFilterVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T05:15:46.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Discount.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Discount.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Discount.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Discount.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Discount.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T03:15:36.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Header.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Header.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Header.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Header.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Header.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:18:39.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Login.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Login.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Login.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:19:34.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Index.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAFIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T05:29:27.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\ForgotPassword.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\ForgotPassword.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\LoginUser\\ForgotPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T05:35:08.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Reviews.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\Reviews.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Models\\Reviews.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\Reviews.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Models\\Reviews.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T03:05:56.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_Footer.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Footer.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Footer.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Footer.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_Footer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:18:40.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAAHkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-17T14:26:43.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Models\\CartItem.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\CartItem.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T01:33:50.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrderDetail.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\OrderDetail.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\OrderDetail.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\OrderDetail.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\OrderDetail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:45:36.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "OrderSuccess.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\OrderSuccess.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\OrderSuccess.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\OrderSuccess.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\OrderSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:43:41.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CreateDiscount.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateDiscount.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateDiscount.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateDiscount.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\CreateDiscount.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T03:16:03.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DangKy.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Home\\DangKy.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Home\\DangKy.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Home\\DangKy.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Home\\DangKy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T02:19:53.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ProductVM.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\ProductVM.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Models\\ProductVM.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\ProductVM.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Models\\ProductVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T03:06:53.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_ProductCard.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_ProductCard.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_ProductCard.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_ProductCard.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_ProductCard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:48:24.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Trangchu.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Trangchu.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Trangchu.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Trangchu.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Trangchu.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T02:20:30.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Create.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-17T12:22:04.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Details.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T02:32:11.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "_MasterLayout.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_MasterLayout.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_MasterLayout.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_MasterLayout.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Shared\\_MasterLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:18:37.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Test.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Test.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Test.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Test.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Home\\Test.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T02:20:19.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ShowCart.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\ShowCart.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\ShowCart.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\ShowCart.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\ShoppingCart\\ShowCart.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:31:40.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Orders.cshtml",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Orders.cshtml",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Orders.cshtml",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Views\\Admin\\Orders.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-18T01:24:34.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Global.asax.cs",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Global.asax.cs",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Global.asax.cs",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:24:34.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "DBBanhBaoTuanDatModel.edmx.sql",
+              "DocumentMoniker": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx.sql",
+              "RelativeDocumentMoniker": "Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx.sql",
+              "ToolTip": "D:\\team\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx.sql",
+              "RelativeToolTip": "Web Banh bao 4 chang linh ngu lam\\Models\\DBBanhBaoTuanDatModel.edmx.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-17T12:37:34.276Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

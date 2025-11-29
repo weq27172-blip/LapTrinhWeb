@@ -1,0 +1,57 @@
+﻿@{
+    var userName = Session["UserName"] as string;
+    var adminUser = Session["AdminUser"]; // <-- add this line
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="@Url.Action("Index","Home")">
+            <img src="~/Content/Images/logo.jpg" alt="logo" height="80" class="me-2" />
+            <span class="fw-bold text-primary">4 Chang Linh Ngu Lam</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Product")">Sản phẩm</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("ShowCart","ShoppingCart")">Giỏ hàng</a></li>
+            </ul>
+
+            <form class="d-flex me-3" action="@Url.Action("Index","Product")" method="get">
+                <input class="form-control me-2" type="search" name="q" placeholder="Tìm sản phẩm..." />
+                <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+
+            <ul class="navbar-nav">
+
+                <!-- === ADMIN BUTTON (only shows if admin logged in) === -->
+                @if (adminUser != null)
+                {
+                    <li class="nav-item">
+                        <a class="btn btn-warning text-dark me-2" href="@Url.Action("Dashboard", "Admin")">
+                            <i class="fa fa-cog"></i> Admin Panel
+                        </a>
+                    </li>
+                }
+
+                <!-- === USER MENU === -->
+                @if (!string.IsNullOrEmpty(userName))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">@userName</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="@Url.Action("Logout","LoginUser")">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Login","LoginUser")"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                    <li class="nav-item"><a class="btn btn-primary text-white ms-2" href="@Url.Action("Register","LoginUser")">Đăng ký</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

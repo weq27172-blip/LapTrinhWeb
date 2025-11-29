@@ -1,0 +1,171 @@
+﻿@model List<Web_Banh_bao_4_chang_linh_ngu_lam.Models.CartItem>
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Thanh toán";
+    var cart = Model;
+}
+
+<div class="container py-4" style="background:#fff6ee;">
+    <h2 class="mb-4">Thanh toán</h2>
+
+    @if (cart == null || !cart.Any())
+    {
+        <div class="alert alert-info">
+            Giỏ hàng trống. <a href="@Url.Action("Index","Product")">Tiếp tục mua sắm</a>
+        </div>
+    }
+    else
+    {
+        using (Html.BeginForm("Checkout", "ShoppingCart", FormMethod.Post, new { id = "checkoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <!-- LEFT SIDE -->
+                <div class="col-md-6">
+                    <h5>Thông tin người nhận</h5>
+
+                    <div class="mb-3">
+                        <label>Họ tên</label>
+                        <input type="text" name="NameCus" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Số điện thoại</label>
+                        <input type="text" name="PhoneCus" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="EmailCus" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Địa chỉ nhận hàng</label>
+                        <input type="text" name="AddressCus" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Mã giảm giá (nếu có)</label>
+                        <input type="text" name="DiscountCode" class="form-control" placeholder="Nhập mã giảm giá" />
+                    </div>
+                    <h5 class="mt-4">Phương thức thanh toán</h5>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PaymentType" value="COD" checked>
+                        <label class="form-check-label">Thanh toán khi nhận hàng</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PaymentType" value="Card" id="cardRadio">
+                        <label class="form-check-label">Thẻ ngân hàng</label>
+                    </div>
+
+                    <div id="cardSection" style="display:none;">
+                        <div class="mt-3">
+                            <label>Tên chủ thẻ</label>
+                            <input type="text" name="CardHolder" class="form-control card-required" />
+                        </div>
+                        <div class="mt-3">
+                            <label>Số thẻ</label>
+                            <input type="text" name="CardNumber" class="form-control card-required" maxlength="16" />
+                        </div>
+                        <div class="mt-3 row">
+                            <div class="col-md-6">
+                                <label>Ngày hết hạn</label>
+                                <input type="text" name="ExpiryDate" class="form-control card-required" placeholder="MM/YY" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>CVV</label>
+                                <input type="password" name="CVV" class="form-control card-required" maxlength="3" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-success mt-4" id="validateBtn">
+                        Xác nhận thanh toán
+                    </button>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="col-md-6">
+                    <h5>Đơn hàng</h5>
+                    <table class="table table-bordered text-center">
+                        <thead class="table-warning">
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>SL</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in cart)
+                            {
+                                <tr>
+                                    <td>@item.Product.NamePro</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@((item.Product.Price * item.Quantity).ToString("N0")) VND</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <div class="text-end fw-bold fs-5">
+                        Tổng: @(cart.Sum(x => x.Product.Price * x.Quantity).ToString("N0")) VND
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-4 text-center">
+                        <h4 class="text-success mb-3">Xác nhận thanh toán</h4>
+                        <p>Bạn có chắc muốn đặt hàng?</p>
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+
+                        <button type="submit" class="btn btn-primary">
+                            Xác nhận
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@section scripts {
+    <script>
+        // Show card inputs
+        document.getElementById("cardRadio").addEventListener("change", function () {
+            document.getElementById("cardSection").style.display = "block";
+
+            document.querySelectorAll(".card-required").forEach(x => {
+                x.required = true;
+            });
+        });
+
+        // Hide card inputs when COD
+        document.querySelector("input[value='COD']").addEventListener("change", function () {
+            document.getElementById("cardSection").style.display = "none";
+
+            document.querySelectorAll(".card-required").forEach(x => {
+                x.required = false;
+            });
+        });
+
+        // Validate & open modal
+        document.getElementById("validateBtn").addEventListener("click", function () {
+            const form = document.getElementById("checkoutForm");
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const modal = new bootstrap.Modal(document.getElementById("paymentModal"));
+            modal.show();
+        });
+    </script>
+}

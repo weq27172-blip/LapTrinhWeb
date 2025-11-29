@@ -1,0 +1,81 @@
+﻿@{
+    var userName = Session["UserName"] as string;
+    var adminUser = Session["AdminUser"];
+    var showHamburger = Session["ShowHamburger"] as bool? ?? true; // default true
+}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+    <div class="container">
+        <!-- Brand / Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="@Url.Action("Index","Home")">
+            <img src="~/Content/Images/image-removebg-preview.png" alt="logo" height="60" class="me-2" />
+            <span class="fw-bold" style="color: #ff7b00;">4 Chang Linh Ngu Lam</span>
+        </a>
+        <!-- Hamburger / Toggle button (optional for PC) -->
+        @if (showHamburger)
+        {
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        }
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Product")">Sản phẩm</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("ShowCart","ShoppingCart")">Giỏ hàng</a></li>
+            </ul>
+
+            <!-- Search form -->
+            <form class="d-flex me-3" action="@Url.Action("Index","Product")" method="get">
+                <input class="form-control me-2" type="search" name="q" placeholder="Tìm sản phẩm..." />
+                <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+
+            <!-- User/Admin buttons -->
+            <ul class="navbar-nav">
+                <!-- Admin -->
+                @if (adminUser != null)
+                {
+                    <li class="nav-item me-2">
+                        <a class="btn btn-warning text-dark" href="@Url.Action("Dashboard", "Admin")">
+                            <i class="fa fa-cog"></i> Admin Panel
+                        </a>
+                    </li>
+                }
+
+                <!-- Logged-in user -->
+                @if (!string.IsNullOrEmpty(userName))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user me-1"></i>@userName
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="@Url.Action("Logout","LoginUser")">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Login","LoginUser")"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                    <li class="nav-item ms-2"><a class="btn btn-primary text-white" href="@Url.Action("Register","LoginUser")">Đăng ký</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Optional CSS tweaks -->
+<style>
+    .navbar-nav .btn {
+        height: 38px;
+    }
+
+    .navbar-nav .nav-link {
+        font-weight: 500;
+    }
+</style>
+
+<!-- Bootstrap JS (already included in _MasterLayout, so optional here) -->

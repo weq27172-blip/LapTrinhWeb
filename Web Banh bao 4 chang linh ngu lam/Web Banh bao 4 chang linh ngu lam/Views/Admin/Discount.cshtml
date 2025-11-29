@@ -1,0 +1,53 @@
+﻿@model List<Web_Banh_bao_4_chang_linh_ngu_lam.Models.MaGiamGia>
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Quản lý mã giảm giá";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between mb-4">
+        <h2>Mã giảm giá</h2>
+        <a href="@Url.Action("CreateDiscount","Admin")" class="btn btn-success">
+            <i class="fa fa-plus"></i> Thêm mã mới
+        </a>
+    </div>
+
+    <table class="table table-bordered text-center">
+        <thead class="table-warning">
+            <tr>
+                <th>Mã</th>
+                <th>Loại</th>
+                <th>Chi tiết</th>
+                <th>Ngày tạo</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in Model)
+            {
+                <tr>
+                    <td>@d.Code</td>
+                    <td>@(d.Type == 1 ? "Buy X Get Y" : "Sale Off (%)")</td>
+                    <td>
+                        @if (d.Type == 1)
+                        {
+                            <text>Buy @d.BuyQuantity, Free @d.FreeQuantity</text>
+                        }
+                        else
+                        {
+                            <text>@d.PercentOff % off</text>
+                        }
+                    </td>
+                    <td>@d.CreatedAt.ToString("dd/MM/yyyy")</td>
+                    <td>@(d.IsActive ? "Active" : "Inactive")</td>
+                    <td>
+                        <a href="@Url.Action("ToggleDiscount","Admin", new { id=d.ID })" class="btn btn-sm btn-warning">
+                            @(d.IsActive ? "Deactivate" : "Activate")
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,441 @@
+﻿@model List<Web_Banh_bao_4_chang_linh_ngu_lam.Models.CartItem>
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Thanh toán";
+    var cart = Model;
+
+    // Generate temporary order ID
+    var orderId = "ORD" + DateTime.Now.ToString("yyyyMMddHHmmss");
+    var totalAmount = cart?.Sum(x => x.Product.Price * x.Quantity) ?? 0;
+}
+
+<div class="container py-4" style="background:#fff6ee;">
+    <h2 class="mb-4">Thanh toán</h2>
+
+    @if (cart == null || !cart.Any())
+    {
+        <div class="alert alert-info">
+            Giỏ hàng trống. <a href="@Url.Action("Index","Product")">Tiếp tục mua sắm</a>
+        </div>
+    }
+    else
+    {
+        using (Html.BeginForm("Checkout", "ShoppingCart", FormMethod.Post, new { id = "checkoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <!-- LEFT SIDE -->
+                <div class="col-md-6">
+                    <h5>Thông tin người nhận</h5>
+                    <div class="mb-3">
+                        <label>Họ tên</label>
+                        <input type="text" name="NameCus" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Số điện thoại</label>
+                        <input type="text" name="PhoneCus" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="EmailCus" class="form-control" />
+                    </div>
+
+                    <!-- Province Selection -->
+                    <div class="mb-3">
+                        <label>Tỉnh/Thành phố <span class="text-danger">*</span></label>
+                        <select name="Province" id="provinceSelect" class="form-select" required>
+                            <option value="">-- Chọn tỉnh/thành phố --</option>
+                            <option value="TPHCM">TP. Hồ Chí Minh</option>
+                            <option value="An Giang">An Giang</option>
+                            <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                            <option value="Bạc Liêu">Bạc Liêu</option>
+                            <option value="Bến Tre">Bến Tre</option>
+                            <option value="Bình Dương">Bình Dương</option>
+                            <option value="Bình Phước">Bình Phước</option>
+                            <option value="Bình Thuận">Bình Thuận</option>
+                            <option value="Cà Mau">Cà Mau</option>
+                            <option value="Cần Thơ">Cần Thơ</option>
+                            <option value="Đồng Nai">Đồng Nai</option>
+                            <option value="Đồng Tháp">Đồng Tháp</option>
+                            <option value="Hậu Giang">Hậu Giang</option>
+                            <option value="Kiên Giang">Kiên Giang</option>
+                            <option value="Long An">Long An</option>
+                            <option value="Sóc Trăng">Sóc Trăng</option>
+                            <option value="Tây Ninh">Tây Ninh</option>
+                            <option value="Tiền Giang">Tiền Giang</option>
+                            <option value="Trà Vinh">Trà Vinh</option>
+                            <option value="Vĩnh Long">Vĩnh Long</option>
+                        </select>
+                    </div>
+
+                    <!-- Shipping Fee Display -->
+                    <div class="mb-3" id="shippingInfo" style="display:none;">
+                        <div class="alert alert-info">
+                            <strong>Phí vận chuyển:</strong> <span id="shippingFee">0</span> VND
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Địa chỉ nhận hàng</label>
+                        <input type="text" name="AddressCus" class="form-control" required />
+                    </div>
+
+                    <!-- Discount Code Section -->
+                    <div class="mb-3">
+                        <label>Mã giảm giá (nếu có)</label>
+                        <div class="input-group">
+                            <input type="text" id="discountCodeInput" name="DiscountCode" class="form-control" placeholder="Nhập mã giảm giá" />
+                            <button type="button" class="btn btn-outline-primary" id="applyDiscountBtn">Áp dụng</button>
+                        </div>
+                        <div id="discountMessage" class="mt-2"></div>
+                        <input type="hidden" id="discountType" name="DiscountType" value="" />
+                        <input type="hidden" id="discountValue" name="DiscountValue" value="0" />
+                        <input type="hidden" id="buyQuantity" name="BuyQuantity" value="0" />
+                        <input type="hidden" id="freeQuantity" name="FreeQuantity" value="0" />
+                    </div>
+
+                    <h5 class="mt-4">Phương thức thanh toán</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PaymentType" value="COD" checked id="codRadio">
+                        <label class="form-check-label" for="codRadio">Thanh toán khi nhận hàng</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PaymentType" value="Card" id="cardRadio">
+                        <label class="form-check-label" for="cardRadio">Thẻ ngân hàng</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PaymentType" value="BankTransfer" id="bankRadio">
+                        <label class="form-check-label" for="bankRadio">Chuyển khoản / Quét QR</label>
+                    </div>
+
+                    <!-- Card inputs -->
+                    <div id="cardSection" style="display:none;">
+                        <div class="mt-3">
+                            <label>Tên chủ thẻ</label>
+                            <input type="text" name="CardHolder" class="form-control card-required" />
+                        </div>
+                        <div class="mt-3">
+                            <label>Số thẻ</label>
+                            <input type="text" name="CardNumber" class="form-control card-required" maxlength="16" />
+                        </div>
+                        <div class="mt-3 row">
+                            <div class="col-md-6">
+                                <label>Ngày hết hạn</label>
+                                <input type="text" name="ExpiryDate" class="form-control card-required" placeholder="MM/YY" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>CVV</label>
+                                <input type="password" name="CVV" class="form-control card-required" maxlength="3" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-success mt-4" id="validateBtn">Xác nhận thanh toán</button>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="col-md-6">
+                    <h5>Đơn hàng</h5>
+                    <table class="table table-bordered text-center">
+                        <thead class="table-warning">
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>SL</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderTableBody">
+                            @foreach (var item in cart)
+                            {
+                                <tr data-product-id="@item.Product.ProductID" data-quantity="@item.Quantity" data-price="@item.Product.Price">
+                                    <td>@item.Product.NamePro</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@string.Format("{0:N0} VND", item.Product.Price * item.Quantity)</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tbody id="freeItemsBody" style="display:none;">
+                            <!-- Free items will be added here dynamically -->
+                        </tbody>
+                    </table>
+
+                    <div class="border-top pt-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">@totalAmount.ToString("N0") VND</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Phí vận chuyển:</span>
+                            <span id="shippingDisplay">0 VND</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 text-success" id="discountRow" style="display:none;">
+                            <span>Giảm giá:</span>
+                            <span id="discountDisplay">0 VND</span>
+                        </div>
+                        <div class="d-flex justify-content-between fw-bold fs-5 border-top pt-2">
+                            <span>Tổng cộng:</span>
+                            <span id="totalAmount">@totalAmount.ToString("N0") VND</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Free Shipping Modal for TPHCM -->
+            <div class="modal fade" id="freeShipModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="border-radius: 20px; background: #fff8f0; border: 2px solid #ffd9b3;">
+                        <div class="modal-header border-0">
+                            <h5 class="modal-title" style="background: #ff7b00; color: white; padding: 8px 16px; border-radius: 20px;">
+                                🎉 ƯU ĐÃI ĐẶC BIỆT
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p class="fw-bold fs-5 mb-2">🚚 Miễn phí vận chuyển nội thành TP. HCM!</p>
+                            <p class="text-muted">Đơn hàng của bạn được giao miễn phí trong khu vực TP. Hồ Chí Minh</p>
+                        </div>
+                        <div class="modal-footer border-0 justify-content-center">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Transfer Modal -->
+            <div class="modal fade" id="bankModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-3 text-center">
+                        <h5 class="mb-3">Chuyển khoản / Quét QR</h5>
+                        <p>Vui lòng chuyển <strong id="bankAmount">@totalAmount.ToString("N0") VND</strong> vào tài khoản với thông tin sau:</p>
+                        <p><strong>Mã đơn hàng:</strong> @orderId</p>
+                        <p>Ghi chú: <strong>Order ID @orderId ## Số tiền chuyển</strong></p>
+                        <img src="~/Content/Images/true.jpg" alt="QR Payment" class="img-fluid mb-2" />
+                        <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confirmation Modal -->
+            <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-4 text-center">
+                        <h4 class="text-success mb-3">Xác nhận thanh toán</h4>
+                        <p>Bạn có chắc muốn đặt hàng?</p>
+                        <p class="fw-bold">Tổng thanh toán: <span id="confirmTotal">@totalAmount.ToString("N0") VND</span></p>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Xác nhận</button>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@section scripts {
+    <script>
+        const cardRadio = document.getElementById("cardRadio");
+        const codRadio = document.getElementById("codRadio");
+        const bankRadio = document.getElementById("bankRadio");
+        const cardSection = document.getElementById("cardSection");
+        const bankModal = new bootstrap.Modal(document.getElementById("bankModal"));
+        const freeShipModal = new bootstrap.Modal(document.getElementById("freeShipModal"));
+        const validateBtn = document.getElementById("validateBtn");
+        const provinceSelect = document.getElementById("provinceSelect");
+        const applyDiscountBtn = document.getElementById("applyDiscountBtn");
+
+        // Base amount
+        const baseAmount = @totalAmount;
+        let shippingFee = 0;
+        let discountAmount = 0;
+        let appliedDiscount = null;
+
+        // Shipping fees for provinces (VND)
+        const shippingFees = {
+            "TPHCM": 0,
+            "Bình Dương": 15000,
+            "Đồng Nai": 20000,
+            "Long An": 25000,
+            "Bà Rịa - Vũng Tàu": 30000,
+            "Tây Ninh": 35000,
+            "Bình Phước": 40000,
+            "Cần Thơ": 45000,
+            "An Giang": 50000,
+            "Đồng Tháp": 45000,
+            "Tiền Giang": 30000,
+            "Vĩnh Long": 40000,
+            "Bến Tre": 35000,
+            "Trà Vinh": 40000,
+            "Sóc Trăng": 45000,
+            "Hậu Giang": 45000,
+            "Kiên Giang": 50000,
+            "Bạc Liêu": 50000,
+            "Cà Mau": 55000,
+            "Bình Thuận": 40000
+        };
+
+        // Province selection handler
+        provinceSelect.addEventListener("change", function() {
+            const selectedProvince = this.value;
+
+            if (selectedProvince === "") {
+                document.getElementById("shippingInfo").style.display = "none";
+                shippingFee = 0;
+            } else {
+                shippingFee = shippingFees[selectedProvince] || 0;
+
+                // Show free shipping modal for TPHCM
+                if (selectedProvince === "TPHCM") {
+                    freeShipModal.show();
+                }
+
+                // Update shipping info
+                document.getElementById("shippingFee").textContent = shippingFee.toLocaleString('vi-VN');
+                document.getElementById("shippingInfo").style.display = "block";
+            }
+
+            updateTotal();
+        });
+
+        // Apply Discount Code
+        applyDiscountBtn.addEventListener("click", function() {
+            const code = document.getElementById("discountCodeInput").value.trim();
+            const messageDiv = document.getElementById("discountMessage");
+
+            if (!code) {
+                showMessage(messageDiv, "Vui lòng nhập mã giảm giá!", "danger");
+                return;
+            }
+
+            // Call server to verify discount code
+            fetch('@Url.Action("VerifyDiscount", "ShoppingCart")?code=' + encodeURIComponent(code))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        appliedDiscount = data.discount;
+
+                        // Store discount info in hidden fields
+                        document.getElementById("discountType").value = data.discount.Type;
+                        document.getElementById("discountValue").value = data.discount.PercentOff || 0;
+                        document.getElementById("buyQuantity").value = data.discount.BuyQuantity || 0;
+                        document.getElementById("freeQuantity").value = data.discount.FreeQuantity || 0;
+
+                        if (data.discount.Type == 1) {
+                            // Buy X Get Y
+                            handleBuyXGetY(data.discount);
+                            showMessage(messageDiv,
+                                `✅ Mã hợp lệ! Mua ${data.discount.BuyQuantity} tặng ${data.discount.FreeQuantity}`,
+                                "success");
+                        } else if (data.discount.Type == 2) {
+                            // Percent discount
+                            discountAmount = (baseAmount * data.discount.PercentOff) / 100;
+                            showMessage(messageDiv,
+                                `✅ Mã hợp lệ! Giảm ${data.discount.PercentOff}% đơn hàng`,
+                                "success");
+                            document.getElementById("discountRow").style.display = "flex";
+                            document.getElementById("discountDisplay").textContent = "-" + discountAmount.toLocaleString('vi-VN') + " VND";
+                        }
+
+                        updateTotal();
+                        applyDiscountBtn.disabled = true;
+                        applyDiscountBtn.textContent = "Đã áp dụng";
+                    } else {
+                        showMessage(messageDiv, "❌ " + data.message, "danger");
+                        resetDiscount();
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    showMessage(messageDiv, "❌ Có lỗi xảy ra, vui lòng thử lại!", "danger");
+                });
+        });
+
+        // Handle Buy X Get Y promotion
+        function handleBuyXGetY(discount) {
+            const tableBody = document.getElementById("orderTableBody");
+            const freeItemsBody = document.getElementById("freeItemsBody");
+            const rows = tableBody.querySelectorAll("tr");
+
+            let totalItemCount = 0;
+            rows.forEach(row => {
+                totalItemCount += parseInt(row.dataset.quantity);
+            });
+
+            // Calculate how many free items customer gets
+            const setsEarned = Math.floor(totalItemCount / discount.BuyQuantity);
+            const freeItems = setsEarned * discount.FreeQuantity;
+
+            if (freeItems > 0) {
+                freeItemsBody.style.display = "";
+                freeItemsBody.innerHTML = `
+                    <tr class="table-success">
+                        <td colspan="3" class="text-center">
+                            <strong>🎁 Quà tặng: ${freeItems} sản phẩm miễn phí</strong>
+                        </td>
+                    </tr>`;
+            }
+        }
+
+        // Reset discount
+        function resetDiscount() {
+            discountAmount = 0;
+            appliedDiscount = null;
+            document.getElementById("discountRow").style.display = "none";
+            document.getElementById("freeItemsBody").style.display = "none";
+            document.getElementById("freeItemsBody").innerHTML = "";
+            document.getElementById("discountType").value = "";
+            document.getElementById("discountValue").value = "0";
+            applyDiscountBtn.disabled = false;
+            applyDiscountBtn.textContent = "Áp dụng";
+            updateTotal();
+        }
+
+        // Show message helper
+        function showMessage(element, message, type) {
+            element.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>`;
+        }
+
+        // Update total amount
+        function updateTotal() {
+            const total = baseAmount + shippingFee - discountAmount;
+            document.getElementById("shippingDisplay").textContent = shippingFee.toLocaleString('vi-VN') + " VND";
+            document.getElementById("totalAmount").textContent = total.toLocaleString('vi-VN') + " VND";
+            document.getElementById("confirmTotal").textContent = total.toLocaleString('vi-VN') + " VND";
+            document.getElementById("bankAmount").textContent = total.toLocaleString('vi-VN') + " VND";
+        }
+
+        // Card selection
+        cardRadio.addEventListener("change", () => {
+            cardSection.style.display = "block";
+            document.querySelectorAll(".card-required").forEach(x => x.required = true);
+        });
+
+        // COD selection
+        codRadio.addEventListener("change", () => {
+            cardSection.style.display = "none";
+            document.querySelectorAll(".card-required").forEach(x => x.required = false);
+        });
+
+        // Bank Transfer selection
+        bankRadio.addEventListener("change", () => {
+            cardSection.style.display = "none";
+            document.querySelectorAll(".card-required").forEach(x => x.required = false);
+            bankModal.show();
+        });
+
+        // Validate & show confirmation
+        validateBtn.addEventListener("click", () => {
+            const form = document.getElementById("checkoutForm");
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const paymentModal = new bootstrap.Modal(document.getElementById("paymentModal"));
+            paymentModal.show();
+        });
+    </script>
+}

@@ -1,0 +1,222 @@
+﻿@model IEnumerable<Web_Banh_bao_4_chang_linh_ngu_lam.Models.Product>
+
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<section class="py-4 mb-4" style="background:#fff3e6;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-5">Bánh bao 4 anh chàng</h1>
+                <p class="lead">Bánh bao tươi, nhân thơm ngon — giao nhanh trong ngày.</p>
+                <p>
+                    <a class="btn btn-primary btn-lg me-2" href="@Url.Action("Index","Product")">Mua ngay</a>
+                    <a class="btn btn-outline-dark btn-lg" href="@Url.Action("ShowCart","ShoppingCart")">Xem giỏ hàng</a>
+                </p>
+            </div>
+            <div class="col-md-6 position-relative">
+                @if (ViewBag.FeaturedProduct != null)
+                {
+                    <img src="~/Content/Images/@ViewBag.FeaturedProduct.ImagePro" class="img-fluid rounded" alt="@ViewBag.FeaturedProduct.NamePro" />
+                    <div class="position-absolute top-0 start-0 m-3 px-2 py-1 bg-warning text-dark rounded">
+                        Món bán chạy nhất
+                    </div>
+                }
+                else
+                {
+                    <img src="~/Content/Images/banhbao1.jpg" class="img-fluid rounded" alt="banner" />
+                    <div class="position-absolute top-0 start-0 m-3 px-2 py-1 bg-warning text-dark rounded">
+                        Món bán chạy nhất
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 🔥 Banner Cuộn (Carousel) -->
+<div id="mainCarousel" class="carousel slide mb-5 promo-click" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner rounded shadow-lg">
+
+        <!-- Slide 1: MUA 2 TẶNG 1 -->
+        <div class="carousel-item active" onclick="showPromo('MUA2TANG1')" style="cursor:pointer;">
+            <img src="~/Content/Images/banner1.png" class="d-block w-100" alt="Khuyến mãi 1" />
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="fw-bold">🎁 MUA 2 TẶNG 1</h5>
+                <p>Bánh bao nhân thịt, xá xíu tươi ngon mỗi ngày</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: SALE 20% -->
+        <div class="carousel-item" onclick="showPromo('SALE20OFF')" style="cursor:pointer;">
+            <img src="~/Content/Images/banner2.png" class="d-block w-100" alt="Khuyến mãi 2" />
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="fw-bold">💥 GIẢM 20% TẤT CẢ SẢN PHẨM 💥</h5>
+                <p>Áp dụng đến hết tháng này, đặt hàng ngay!</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: FREESHIP -->
+        <div class="carousel-item" onclick="showPromo('FREESHIP')" style="cursor:pointer;">
+            <img src="~/Content/Images/banner3.png" class="d-block w-100" alt="Khuyến mãi 3" />
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="fw-bold">🚚 GIAO HÀNG SIÊU TỐC</h5>
+                <p>Miễn phí vận chuyển nội thành TP.HCM</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<div class="container">
+    <h3 class="mb-4">Sản phẩm nổi bật</h3>
+
+    <div class="row g-3 mb-5">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var p in Model.Take(8))
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    @Html.Partial("_ProductCard", p)
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p>Không có sản phẩm để hiển thị.</p>
+            </div>
+        }
+    </div>
+
+    <style>
+        /* Đẹp hơn – pastel style */
+        .promo-modal .modal-content {
+            border-radius: 20px;
+            background: #fff8f0;
+            border: 2px solid #ffd9b3;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            animation: popScale 0.25s ease;
+        }
+
+        @@keyframes popScale {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .promo-badge {
+            background: #ff8c42;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .promo-code-box {
+            background: white;
+            border: 2px dashed #ffb380;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            border-radius: 12px;
+            padding: 8px 20px;
+            font-size: 16px;
+        }
+    </style>
+
+    <!-- Modal -->
+    <div class="modal fade promo-modal" id="promoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title promo-badge">🎉 ƯU ĐÃI ĐẶC BIỆT</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p id="promoMessage" class="fw-bold fs-5 mb-2"></p>
+
+                    <div id="promoCode" class="promo-code-box d-none"></div>
+
+                    <button id="copyBtn" class="btn btn-dark copy-btn d-none" onclick="copyPromo()">📋 Sao chép mã</button>
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPromo(code) {
+            let msg = "";
+            let codeBox = document.getElementById("promoCode");
+            let copyBtn = document.getElementById("copyBtn");
+
+            if (code === "MUA2TANG1") {
+                msg = "🎁 Mua 2 tặng 1 – Áp dụng toàn bộ cửa hàng!";
+                codeBox.innerText = "MUA2TANG1";
+            }
+            else if (code === "SALE20OFF") {
+                msg = "🔥 Giảm 20% cho tất cả sản phẩm!";
+                codeBox.innerText = "SALE20OFF";
+            }
+            else if (code === "FREESHIP") {
+                msg = "🚚 Miễn phí vận chuyển nội thành TP. HCM!";
+                codeBox.classList.add("d-none");
+                copyBtn.classList.add("d-none");
+            }
+
+            // Set UI
+            document.getElementById("promoMessage").innerText = msg;
+
+            if (code !== "FREESHIP") {
+                codeBox.classList.remove("d-none");
+                copyBtn.classList.remove("d-none");
+            }
+
+            // Show modal
+            var promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+            promoModal.show();
+        }
+
+        function copyPromo() {
+            const code = document.getElementById("promoCode").innerText.trim();
+            navigator.clipboard.writeText(code);
+            alert("Đã sao chép mã: " + code);
+        }
+    </script>
+</div>

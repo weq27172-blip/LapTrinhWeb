@@ -1,0 +1,104 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.OrderPro
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Chi tiết đơn hàng";
+}
+
+<div class="container py-4">
+    <h2 class="text-center text-primary mb-4">Chi tiết đơn hàng #@Model.ID</h2>
+
+    <!-- ORDER INFO -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-warning">
+            <h5 class="mb-0">Thông tin đơn hàng</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Mã đơn hàng:</strong> @Model.ID</p>
+            <p><strong>Ngày đặt:</strong> @(Model.DateOrder?.ToString("dd/MM/yyyy HH:mm"))</p>
+            <p><strong>Trạng thái:</strong> @Model.Status</p>
+            <p><strong>Tổng tiền:</strong> @Model.TotalAmount?.ToString("N0") VND</p>
+        </div>
+    </div>
+
+    <!-- CUSTOMER INFO -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-info text-white">
+            <h5 class="mb-0">Thông tin khách hàng</h5>
+        </div>
+        <div class="card-body">
+            @if (Model.Customer != null)
+            {
+                <p><strong>Họ tên:</strong> @Model.Customer.NameCus</p>
+                <p><strong>Email:</strong> @Model.Customer.EmailCus</p>
+                <p><strong>Địa chỉ:</strong> @Model.Customer.AddressCus</p>
+                <p><strong>SĐT:</strong> @Model.Customer.PhoneCus</p>
+            }
+            else
+            {
+                <p class="text-danger">Không tìm thấy thông tin khách hàng.</p>
+            }
+        </div>
+    </div>
+
+    <!-- ORDER DETAILS TABLE -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0">Sản phẩm trong đơn hàng</h5>
+        </div>
+        <div class="card-body">
+
+            @if (Model.OrderDetails != null && Model.OrderDetails.Any())
+            {
+                <table class="table table-bordered text-center align-middle shadow-sm">
+                    <thead class="table-warning">
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Hình ảnh</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.OrderDetails)
+                        {
+                            var price = item.UnitPrice ?? 0;
+                            var qty = item.Quantity ?? 0;
+                            var total = price * qty;
+
+                            <tr>
+                                <td>@item.Product?.NamePro</td>
+
+                                <td>
+                                    @if (item.Product?.ImagePro != null)
+                                    {
+                                        <img src="~/image/@item.Product.ImagePro"
+                                             width="70" height="70" class="rounded shadow-sm" />
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">Không có ảnh</span>
+                                    }
+                                </td>
+
+                                <td>@price.ToString("N0") VND</td>
+                                <td>@qty</td>
+                                <td>@total.ToString("N0") VND</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p class="text-muted text-center">Không có sản phẩm nào trong đơn hàng.</p>
+            }
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a class="btn btn-secondary" href="@Url.Action("Orders", "Admin")">
+            ← Quay lại danh sách đơn hàng
+        </a>
+    </div>
+</div>

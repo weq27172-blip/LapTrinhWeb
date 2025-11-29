@@ -1,0 +1,71 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.Product
+
+@{
+    var reviews = ViewBag.AllReviews as List<dynamic>;
+    var productReviews = reviews?.Where(r => r.ProductID == Model.ProductID).ToList();
+    double avgRating = productReviews?.Count > 0
+        ? productReviews.Average(r => (int)r.Rating)
+        : 0;
+}
+
+<a href="@Url.Action("Details", "Product", new { id = Model.ProductID })"
+   class="text-decoration-none text-dark">
+
+    <div class="card product-card h-100 d-flex flex-column">
+
+        <img src="@Url.Content("~/Content/Images/" + (string.IsNullOrEmpty(Model.ImagePro) ? "noimage.jpg" : Model.ImagePro))"
+             class="card-img-top" alt="@Model.NamePro" />
+
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">@Model.NamePro</h5>
+
+            <p class="card-text text-danger">
+                @Model.Price.ToString("N0") VND
+            </p>
+
+            <p class="card-text text-muted">
+                @((Model.DescriptionPro ?? "").Length > 60
+                    ? Model.DescriptionPro.Substring(0, 60) + "..."
+                    : Model.DescriptionPro)
+            </p>
+
+            <div class="text-warning mb-2">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    if (i <= avgRating)
+                    {
+                        <i class="fa fa-star"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-star-o"></i>
+                    }
+                }
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="btn btn-sm btn-outline-primary">
+                    <i class="fa fa-eye"></i> Xem
+                </span>
+
+                <a class="btn btn-sm btn-primary"
+                   href="@Url.Action("AddToCart", "ShoppingCart", new { id = Model.ProductID })"
+                   onclick="event.stopPropagation();">
+                    <i class="fa fa-cart-plus"></i> Mua
+                </a>
+            </div>
+        </div>
+    </div>
+</a>
+
+<style>
+    .product-card {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        cursor: pointer;
+    }
+
+        .product-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+</style>

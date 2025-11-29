@@ -1,0 +1,40 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.Customer
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<h2>Đăng ký tài khoản</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>Họ tên:</label>
+        @Html.TextBoxFor(m => m.NameCus, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Email:</label>
+        @Html.TextBoxFor(m => m.EmailCus, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Số điện thoại:</label>
+        @Html.TextBoxFor(m => m.PhoneCus, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Địa chỉ:</label>
+        @Html.TextBoxFor(m => m.AddressCus, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Mật khẩu:</label>
+        @Html.PasswordFor(m => m.PassCus, new { @class = "form-control", @placeholder = "Nhập mật khẩu..." })
+        @Html.ValidationMessageFor(m => m.PassCus, "", new { @class = "text-danger" })
+    </div>
+
+    <br />
+    <input type="submit" value="Đăng ký" class="btn btn-success" />
+}

@@ -1,0 +1,57 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.Product
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Chỉnh sửa sản phẩm";
+}
+
+<div class="container py-4">
+    <h2>Chỉnh sửa sản phẩm</h2>
+
+    @using (Html.BeginForm("EditProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.ProductID)
+
+        <div class="mb-3">
+            <label>Tên sản phẩm</label>
+            @Html.TextBoxFor(m => m.NamePro, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.NamePro, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            <label>Giá</label>
+            @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            <label>Mô tả</label>
+            @Html.TextAreaFor(m => m.DescriptionPro, new { @class = "form-control", rows = "4" })
+            @Html.ValidationMessageFor(m => m.DescriptionPro, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            <label>Loại sản phẩm</label>
+            @Html.DropDownListFor(m => m.Category, (SelectList)ViewBag.CateList, "--Chọn loại--", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Category, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            <label>Ảnh hiện tại:</label><br />
+            @if (!string.IsNullOrEmpty(Model.ImagePro))
+            {
+                <img src="~/Content/Images/@Model.ImagePro" width="100" class="mb-2" /><br />
+            }
+            <label>Thay đổi ảnh:</label>
+            <input type="file" name="UploadImage" class="form-control" />
+        </div>
+
+        <div class="mb-3 form-check">
+            @Html.CheckBoxFor(m => m.IsFeatured, new { @class = "form-check-input" })
+            <label class="form-check-label">Sản phẩm nổi bật?</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+        <a href="@Url.Action("Products", "Admin")" class="btn btn-secondary">Quay lại</a>
+    }
+</div>

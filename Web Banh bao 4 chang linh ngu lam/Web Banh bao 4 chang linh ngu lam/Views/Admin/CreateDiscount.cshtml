@@ -1,0 +1,50 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.MaGiamGia
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Thêm mã giảm giá";
+}
+
+<div class="container py-4">
+    <h2>Thêm mã giảm giá mới</h2>
+
+    @using (Html.BeginForm("CreateDiscount", "Admin", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="mb-3">
+            <label>Mã giảm giá</label>
+            @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label>Loại</label>
+            @Html.DropDownListFor(m => m.Type, new SelectList(new[]
+            {
+                new {Value=1, Text="Buy X Get Y"},
+                new {Value=2, Text="Sale Off (%)"}
+            }, "Value", "Text"), "--Chọn loại--", new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label>Buy Quantity (nếu Buy X Get Y)</label>
+            @Html.TextBoxFor(m => m.BuyQuantity, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label>Free Quantity (nếu Buy X Get Y)</label>
+            @Html.TextBoxFor(m => m.FreeQuantity, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label>Percent Off (nếu Sale Off)</label>
+            @Html.TextBoxFor(m => m.PercentOff, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label>Ngày hết hạn</label>
+            @Html.TextBoxFor(m => m.ExpireDate, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
+        </div>
+
+        <button type="submit" class="btn btn-success">Thêm mới</button>
+        <a href="@Url.Action("Discount","Admin")" class="btn btn-secondary">Quay lại</a>
+    }
+</div>

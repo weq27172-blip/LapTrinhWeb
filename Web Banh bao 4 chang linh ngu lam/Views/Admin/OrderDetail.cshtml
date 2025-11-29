@@ -1,0 +1,286 @@
+﻿@model Web_Banh_bao_4_chang_linh_ngu_lam.Models.OrderPro
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    ViewBag.Title = "Chi tiết đơn hàng";
+
+    // Calculate discount info
+    var discount = Model.MaGiamGia;
+    var hasDiscount = discount != null && discount.IsActive == true;
+    var discountCode = hasDiscount ? discount.Code : null;
+
+    decimal discountAmount = 0;
+    if (hasDiscount && discount.Type == 2 && discount.PercentOff.HasValue)
+    {
+        discountAmount = (Model.SubTotal ?? 0) * discount.PercentOff.Value / 100;
+    }
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary mb-0">Chi tiết đơn hàng #@Model.ID</h2>
+        <a class="btn btn-secondary" href="@Url.Action("Orders", "Admin")">
+            <i class="fa fa-arrow-left"></i> Quay lại
+        </a>
+    </div>
+
+    <div class="row">
+        <!-- LEFT COLUMN: Customer Info -->
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-user"></i> Thông tin khách hàng</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm table-borderless">
+                        <tr>
+                            <td class="fw-bold" style="width: 40%;">Tên khách hàng:</td>
+                            <td>@(Model.Customer?.NameCus ?? "Không rõ")</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Số điện thoại:</td>
+                            <td>@(Model.Customer?.PhoneCus ?? "Không rõ")</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Email:</td>
+                            <td>@(Model.Customer?.EmailCus ?? "Không rõ")</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Địa chỉ giao hàng:</td>
+                            <td>@(Model.DeliveryAddress ?? "Không rõ")</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Tỉnh/Thành phố:</td>
+                            <td>
+                                <span class="badge bg-info">@(Model.Province ?? "Không rõ")</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Order Info -->
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-warning">
+                    <h5 class="mb-0"><i class="fas fa-receipt"></i> Thông tin đơn hàng</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm table-borderless">
+                        <tr>
+                            <td class="fw-bold" style="width: 50%;">Ngày đặt:</td>
+                            <td>@(Model.DateOrder?.ToString("dd/MM/yyyy HH:mm") ?? "Không rõ")</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Phương thức thanh toán:</td>
+                            <td><span class="badge bg-secondary">@(Model.PaymentMethod ?? "Không rõ")</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Trạng thái:</td>
+                            <td>
+                                <span class="badge @(Model.Status == "Đã giao" ? "bg-success" : Model.Status == "Đã hủy" ? "bg-danger" : "bg-warning")">
+                                    @(Model.Status ?? "Chưa cập nhật")
+                                </span>
+                            </td>
+                        </tr>
+                        @if (hasDiscount)
+                        {
+                            <tr>
+                                <td class="fw-bold">Mã giảm giá:</td>
+                                <td>
+                                    <span class="badge bg-success">@discountCode</span>
+                                    @if (discount.Type == 1)
+                                    {
+                                        <small class="d-block text-muted mt-1">Mua @discount.BuyQuantity tặng @discount.FreeQuantity</small>
+                                    }
+                                    else if (discount.Type == 2)
+                                    {
+                                        <small class="d-block text-muted mt-1">Giảm @discount.PercentOff%</small>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        <tr>
+                            <td class="fw-bold">Phí vận chuyển:</td>
+                            <td>
+                                @if (Model.ShippingFee == 0)
+                                {
+                                    <span class="text-success fw-bold"><i class="fas fa-shipping-fast"></i> Miễn phí</span>
+                                }
+                                else
+                                {
+                                    <span>@(Model.ShippingFee.HasValue ? Model.ShippingFee.Value.ToString("N0") : "0") VND</span>
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Table -->
+    <h4 class="mb-3"><i class="fas fa-shopping-cart"></i> Sản phẩm đã đặt</h4>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body p-0">
+            <table class="table table-bordered table-hover mb-0">
+                <thead class="table-warning text-center">
+                    <tr>
+                        <th style="width: 100px;">Hình</th>
+                        <th>Tên sản phẩm</th>
+                        <th style="width: 100px;">Số lượng</th>
+                        <th style="width: 150px;">Đơn giá</th>
+                        <th style="width: 150px;">Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderDetails)
+                    {
+                        var product = item.Product;
+                        var qty = item.Quantity ?? 0;
+                        var price = item.UnitPrice ?? 0;
+                        var total = qty * price;
+                        bool isFree = price == 0;
+
+                        <tr class="text-center align-middle @(isFree ? "table-success" : "")">
+                            <td>
+                                <img src="@Url.Content("~/Content/Images/" + (product?.ImagePro ?? "noimage.jpg"))"
+                                     alt="@product?.NamePro"
+                                     class="img-thumbnail" style="height: 80px; object-fit: cover;" />
+                            </td>
+
+                            <td class="text-start">
+                                <strong>@(product?.NamePro ?? "Không rõ")</strong>
+                                @if (isFree)
+                                {
+                                    <span class="badge bg-success ms-2">🎁 TẶNG MIỄN PHÍ</span>
+                                }
+                            </td>
+
+                            <td><span class="badge bg-primary fs-6">@qty</span></td>
+
+                            <td>
+                                @if (isFree)
+                                {
+                                    <span class="text-success fw-bold fs-6">FREE</span>
+                                }
+                                else
+                                {
+                                    @price.ToString("N0") <text>VND</text>
+                                }
+                            </td>
+
+                            <td>
+                                @if (isFree)
+                                {
+                                    <span class="text-success fw-bold fs-6">0 VND</span>
+                                }
+                                else
+                                {
+                                    <strong>@total.ToString("N0") VND</strong>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="row justify-content-end">
+        <div class="col-md-6">
+            <div class="card shadow-sm" style="background: #fff8f0; border: 2px solid #ffd9b3;">
+                <div class="card-body">
+                    <h5 class="card-title mb-3" style="color: #ff7b00;">
+                        <i class="fas fa-calculator"></i> Tổng kết đơn hàng
+                    </h5>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Tạm tính:</span>
+                        <span class="fw-bold">@(Model.SubTotal.HasValue ? Model.SubTotal.Value.ToString("N0") : "0") VND</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>
+                            Phí vận chuyển
+                            @if (!string.IsNullOrEmpty(Model.Province))
+                            {
+                                <small class="text-muted">(@Model.Province)</small>
+                            }:
+                        </span>
+                        <span>
+                            @if (Model.ShippingFee == 0)
+                            {
+                                <span class="text-success fw-bold">
+                                    <i class="fas fa-gift"></i> Miễn phí
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="fw-bold">@(Model.ShippingFee.HasValue ? Model.ShippingFee.Value.ToString("N0") : "0") VND</span>
+                            }
+                        </span>
+                    </div>
+
+                    @if (hasDiscount && discountAmount > 0)
+                    {
+                        <div class="d-flex justify-content-between mb-2 text-success">
+                            <span>
+                                Giảm giá @discount.PercentOff%
+                                @if (!string.IsNullOrEmpty(discountCode))
+                                {
+                                    <small>(@discountCode)</small>
+                                }:
+                            </span>
+                            <span class="fw-bold">-@discountAmount.ToString("N0") VND</span>
+                        </div>
+                    }
+
+                    <hr style="border-top: 2px dashed #ff7b00;" />
+
+                    <div class="d-flex justify-content-between fw-bold fs-4" style="color: #ff7b00;">
+                        <span>Tổng cộng:</span>
+                        <span>@((Model.TotalAmount ?? 0).ToString("N0")) VND</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Update Form -->
+    <div class="mt-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0"><i class="fas fa-edit"></i> Cập nhật trạng thái đơn hàng</h5>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("UpdateStatus", "Admin", FormMethod.Post, new { @class = "row g-3 align-items-center" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="id" value="@Model.ID" />
+
+                    <div class="col-md-8">
+                        <select name="status" class="form-select">
+                            <option value="Chờ xác nhận" selected="@(Model.Status == "Chờ xác nhận")">Chờ xác nhận</option>
+                            <option value="Đang xử lý" selected="@(Model.Status == "Đang xử lý")">Đang xử lý</option>
+                            <option value="Đang giao hàng" selected="@(Model.Status == "Đang giao hàng")">Đang giao hàng</option>
+                            <option value="Đã giao" selected="@(Model.Status == "Đã giao")">Đã giao</option>
+                            <option value="Đã hủy" selected="@(Model.Status == "Đã hủy")">Đã hủy</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="fas fa-save"></i> Cập nhật trạng thái
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
